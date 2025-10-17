@@ -172,19 +172,3 @@ class LinkedList {
 }
 
 export { LinkedList };
-
-const list = new LinkedList();
-
-list.append("cat1");
-list.append("cat2");
-list.append("cat3");
-// console.log(list.size());
-// console.log(list.pop());
-// console.log(list.pop());
-// console.log(list.pop());
-// list.append("cat3");
-// console.log(list.toString());
-// console.log(list.contains("cat3"));
-// console.log(list.find("cat1"));
-list.insertAt("cat8", 3);
-console.log(list.toString());
