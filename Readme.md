@@ -1,31 +1,44 @@
-# Linked List Project
+# Linked List - TypeScript
 
-This project implements a linked list data structure in JavaScript. It provides basic operations such as insertion, deletion, searching, and traversal.
+Singly linked list implementation in TypeScript.
 
-## Features
+## Methods
 
-- Singly linked list implementation
-- Methods for adding and removing nodes
-- Search functionality
-- Easy-to-read code with comments
-
-## Getting Started
-
-1. Clone the repository.
-2. Install dependencies (if any).
-3. Run the code using Node.js or in your preferred JavaScript environment.
+- `append(value)` - Add to end
+- `prepend(value)` - Add to start
+- `pop()` - Remove last element
+- `at(index)` - Get node at index
+- `find(value)` - Find index of value
+- `contains(value)` - Check if value exists
+- `insertAt(value, index)` - Insert at position
+- `size()` - Get list size
+- `toString()` - Display as string
 
 ## Usage
 
-```js
-const LinkedList = require("./linkedlist");
+```typescript
+import { LinkedList } from "./linkedList";
+
 const list = new LinkedList();
-list.insert(10);
-list.insert(20);
-list.remove(10);
-console.log(list.search(20));
+
+list.append("cat1");
+list.append("cat2");
+list.append("cat3");
+console.log(list.toString());
+// (cat1) -> (cat2) -> (cat3)
+
+list.insertAt("cat8", 3);
+console.log(list.toString());
+// (cat1) -> (cat2) -> (cat3) -> (cat8)
+
+list.prepend("dog");
+list.append("snake");
+console.log(list.toString());
+// (dog) -> (cat1) -> (cat2) -> (cat3) -> (cat8) -> (snake)
 ```
 
-## License
+## Run
 
-Jaffa
+```bash
+npx ts-node linkedList.ts
+```
