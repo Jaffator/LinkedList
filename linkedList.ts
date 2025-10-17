@@ -14,8 +14,12 @@ class LinkedList {
     this.head = null;
     this.current = this.head;
   }
-  // represent objects as strings
-  toString() {
+
+  /**
+   * represents your LinkedList objects as strings
+   * @returns string: ( value ) -> ( value ) -> ( value ) -> null
+   */
+  toString(): string {
     let nodes: any[] = [];
     let result: string;
     this.current = this.head;
@@ -27,6 +31,9 @@ class LinkedList {
     return (result = nodes.map((item) => `(${item})`).join(" -> "));
   }
 
+  /**
+   * adds a new node containing value to the end of the list
+   */
   append(value: any) {
     const node = new ListNode(value);
 
@@ -44,11 +51,15 @@ class LinkedList {
     }
   }
 
+  /**
+   * adds a new node containing value to the start of the list
+   */
   prepend(value: any) {
     const node = new ListNode(value);
     node.nextNode = this.head;
     this.head = node;
   }
+
   /**
    * @returns {number} Number of elements in the list starting wiht 0
    */
@@ -72,6 +83,10 @@ class LinkedList {
     return this.current;
   }
 
+  /**
+   *
+   * @returns returns the node at the given index
+   */
   at(index: number): ListNode | null {
     // Check for invalid index
     if (index < 0) {
@@ -115,6 +130,7 @@ class LinkedList {
       return `${delItem} deleted`;
     }
   }
+
   /**
    * @return true or false inf value is in linked list
    */
@@ -126,6 +142,7 @@ class LinkedList {
     }
     return false;
   }
+
   /**
    * @return index of node or null
    */
@@ -139,6 +156,7 @@ class LinkedList {
     }
     return null;
   }
+
   /**
    * Insert value to certain index
    */
